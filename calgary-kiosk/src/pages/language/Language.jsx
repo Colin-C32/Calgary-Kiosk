@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const TransitHome = ({ setPage }) => {
+const Language = ({ setPage }) => {
   return (
     <div>
-      PAGE: TRANSIT
+      PAGE: LANGUAGE
       <div
         onClick={() => {
           setPage("Home");
@@ -15,4 +15,4 @@ const TransitHome = ({ setPage }) => {
   );
 };
 
-export default TransitHome;
+export default Language;

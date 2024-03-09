@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const TransitHome = ({ setPage }) => {
+const ErrorPage = ({ setPage }) => {
   return (
     <div>
-      PAGE: TRANSIT
+      SOME ERROR OCCURRED
       <div
         onClick={() => {
           setPage("Home");
@@ -15,4 +15,4 @@ const TransitHome = ({ setPage }) => {
   );
 };
 
-export default TransitHome;
+export default ErrorPage;
