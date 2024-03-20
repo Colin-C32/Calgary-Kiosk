@@ -1,0 +1,19 @@
+.taskbar-container {
+  max-width: 500px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  height: 15%;
+  justify-content: space-between;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.taskbar-icon:hover {
+  color: var(--gray);
+}

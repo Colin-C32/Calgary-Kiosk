@@ -3,12 +3,26 @@
 :root {
   --gray: #868686;
   --dark-blue: #00337e;
+  --dark-blue-hover: #b0b8ff;
+  --dark-blue-shadow: #00327e6e;
   --dark-blue-faded: #dadeff;
   --light-blue-faded: #f5f6ff;
   --red: #7e0000;
+  --red-hover: #ffa6a6;
+  --red-shadow: #7e00006b;
   --red-faded: #ffe2e2;
 }
 
 body {
   font-family: "Lato", serif;
+  background: var(--gray);
+}
+
+.App {
+  height: 750px;
+  width: 500px;
+  border: 2px solid black;
+  margin: 10vh auto;
+  background: white;
+  position: relative;
 }

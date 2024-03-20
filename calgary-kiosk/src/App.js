@@ -1,8 +1,9 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Home from "./pages/home/Home.jsx";
 import TransitHome from "./pages/transit/TransitHome.jsx";
 import Language from "./pages/language/Language.jsx";
+import PointsOfInterest from "./pages/pointOfInterest/PointsOfInterest.jsx";
 import EmergencyHome from "./pages/emergency/EmergencyHome.jsx";
 import ErrorPage from "./pages/error/ErrorPage.jsx";
 
@@ -19,6 +20,8 @@ function App() {
         <Language {...{ setPage }} />
       ) : page === "Emergency" ? (
         <EmergencyHome {...{ setPage }} />
+      ) : page === "PointsOfInterest" ? (
+        <PointsOfInterest {...{ setPage }} />
       ) : (
         <ErrorPage {...{ setPage }} />
       )}
