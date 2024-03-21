@@ -6,6 +6,13 @@ const TransitHome = ({ setPage }) => {
       PAGE: TRANSIT
       <div
         onClick={() => {
+          setPage("FairInformation");
+        }}
+      >
+        Go to FairInformation
+      </div>
+      <div
+        onClick={() => {
           setPage("Home");
         }}
       >

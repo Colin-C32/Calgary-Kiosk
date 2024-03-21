@@ -5,6 +5,7 @@ import TransitHome from "./pages/transit/TransitHome.jsx";
 import Language from "./pages/language/Language.jsx";
 import PointsOfInterest from "./pages/pointOfInterest/PointsOfInterest.jsx";
 import EmergencyHome from "./pages/emergency/EmergencyHome.jsx";
+import FareInformation from "./pages/transit/fare/FareInformation.jsx";
 import ErrorPage from "./pages/error/ErrorPage.jsx";
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <EmergencyHome {...{ setPage }} />
       ) : page === "PointsOfInterest" ? (
         <PointsOfInterest {...{ setPage }} />
+      ) : page === "FairInformation" ? (
+        <FareInformation {...{ setPage }} />
       ) : (
         <ErrorPage {...{ setPage }} />
       )}

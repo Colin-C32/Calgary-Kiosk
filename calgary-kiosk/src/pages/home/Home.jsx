@@ -5,9 +5,9 @@ import "./Home.scss";
 const Home = ({ setPage }) => {
   return (
     <div>
-      <div class="header-container">
-        <h1 class="header">Welcome to Calgary</h1>
-        <h1 class="header" id="non-english-header">
+      <div class="welcome-header-container">
+        <h1 class="welcome-header">Welcome to Calgary</h1>
+        <h1 class="welcome-header" id="non-english-header">
           Bienvenue à Calgary
         </h1>
       </div>
