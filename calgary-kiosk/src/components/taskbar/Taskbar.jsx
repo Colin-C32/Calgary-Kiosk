@@ -11,7 +11,13 @@ export const Taskbar = ({ setPage }) => {
         className="taskbar-icon"
         sx={{ fontSize: 85, marginLeft: "5%" }}
       />
-      <HomeIcon className="taskbar-icon" sx={{ fontSize: 85 }} />
+      <HomeIcon
+        onClick={() => {
+          setPage("Home");
+        }}
+        className="taskbar-icon"
+        sx={{ fontSize: 85 }}
+      />
       <GTranslateIcon
         onClick={() => {
           setPage("Language");
