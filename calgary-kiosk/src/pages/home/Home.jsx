@@ -1,29 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Taskbar } from "../../components/taskbar/Taskbar";
+import "./Home.scss";
 
 const Home = ({ setPage }) => {
   return (
     <div>
-      <div
-        onClick={() => {
-          setPage("Transit");
-        }}
-      >
-        Transit
+      <div class="header-container">
+        <h1 class="header">Welcome to Calgary</h1>
+        <h1 class="header" id="non-english-header">
+          Bienvenue à Calgary
+        </h1>
+      </div>
+      <div class="information-container">
+        <div
+          onClick={() => {
+            setPage("Transit");
+          }}
+          class="information-option"
+        >
+          Transit Information
+        </div>
+        <div
+          onClick={() => {
+            setPage("PointsOfInterest");
+          }}
+          class="information-option"
+        >
+          Points of Interest
+        </div>
       </div>
       <div
         onClick={() => {
           setPage("Emergency");
         }}
+        class="emergency-option"
       >
-        Emergency
+        Emergency Contact
       </div>
-      <div
-        onClick={() => {
-          setPage("Language");
-        }}
-      >
-        Language
+      <div className="instructions">
+        <div class="box" id="scan-text">
+          <p>Scan to take me with you!</p>
+          <p class="french-text">Scanne pour m'emmener avec toi!</p>
+        </div>
+
+        <div class="box" id="language-text">
+          <p>Change language!</p>
+          <p class="french-text">Changer de langue!</p>
+        </div>
       </div>
+      <Taskbar setPage={setPage} />
     </div>
   );
 };
