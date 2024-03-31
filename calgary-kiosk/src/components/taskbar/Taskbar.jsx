@@ -2,7 +2,7 @@ import React from "react";
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import HomeIcon from "@mui/icons-material/Home";
 import GTranslateIcon from "@mui/icons-material/GTranslate";
-import "./Taskbar.scss";
+import "./Taskbar.css";
 
 export const Taskbar = ({ setPage }) => {
   return (
