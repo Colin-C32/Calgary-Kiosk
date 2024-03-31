@@ -1,6 +1,6 @@
 import React from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import "./Header.scss";
+import "./Header.css";
 
 export const Header = ({ setPage, previousPage, title }) => {
   return (
