@@ -40,8 +40,12 @@
     margin-top: 15px;
 }
 
+textarea {
+  resize: none;
+}
+
 .emergency-input {
-    width: 70%;
+    width: 66.5%;
     margin-left: 15%;
     border-radius: 5px;
     height: 100px;
@@ -54,7 +58,7 @@
 
 .cancel {
     height: 40px;
-    width: 74%;
+    width: 70%;
     margin-left: 15%;
     margin-right: 0;
     margin-top: 14px;
@@ -65,7 +69,7 @@
     align-items: center;
     justify-content: center;
     height: 40px;
-    width: 74%;
+    width: 70%;
     margin-left: 15%;
     margin-right: 0;
 }
