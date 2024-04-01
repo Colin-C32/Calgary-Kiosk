@@ -21,6 +21,7 @@
 }
 
 .information-option {
+  cursor: pointer;
   border: 1px solid var(--dark-blue);
   border-radius: 10px;
   width: 35%;
@@ -40,6 +41,7 @@
 }
 
 .emergency-option {
+  cursor: pointer;
   width: 80%;
   border-radius: 10px;
   height: 120px;

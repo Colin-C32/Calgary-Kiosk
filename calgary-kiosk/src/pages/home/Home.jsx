@@ -1,6 +1,6 @@
 import React from "react";
 import { Taskbar } from "../../components/taskbar/Taskbar";
-import "./Home.scss";
+import "./Home.css";
 
 const Home = ({ setPage }) => {
   return (

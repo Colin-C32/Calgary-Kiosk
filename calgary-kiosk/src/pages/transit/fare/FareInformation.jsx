@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Header } from "../../../components/UI/Header";
 import { Taskbar } from "../../../components/taskbar/Taskbar";
-import "./FareInformation.scss";
+import "./FareInformation.css";
 
 const FareInformation = ({ setPage }) => {
   const [fareData, setFareData] = useState({
