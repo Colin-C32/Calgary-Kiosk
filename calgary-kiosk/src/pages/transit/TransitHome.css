@@ -1,0 +1,109 @@
+.transit-info-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 30px;
+    margin: 8% 0;
+    margin-left: 11.5%;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    width: 65%;
+    height: 50px;
+    color: var(--dark-blue);
+    background-color: var(--dark-blue-faded);
+    box-shadow: 0 4px 8px var(--dark-blue-shadow);
+
+
+    .transit-info-table{
+        margin-top: 25px;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+        width: 85%;
+        td {
+            color: #00337E;
+            font-size: 13px;
+
+            svg {
+                height: 17px;
+                width: 17px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        tr {
+            height: 30px;
+        }
+
+        td:first-child{
+            border-left: none;
+        }
+
+        td:last-child{
+            border-right: none;
+        }
+        td:nth-child(1) {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        td:nth-child(2) {
+            text-align: center;
+            font-size: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        
+        td:nth-child(3) {
+            text-align: center;
+            font-size: 15px;
+            padding-left: 20px;
+            color: red;
+        }
+
+        td:not(:nth-child(3)) {
+            border-right: 2px solid #878FD1;
+        }
+    }
+  }
+
+
+  .transit-info{
+    margin: 10% 0;
+  }
+  
+  .transit-options-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin: 20% 0;
+  }
+  
+  .transit-option {
+    cursor: pointer;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 15px 30px;
+    margin: 10px 0px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    width: 65%;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    background-color: var(--dark-blue-faded);
+    box-shadow: 0 4px 8px var(--dark-blue-shadow);
+  }
+
+  .transit-option:hover {
+    background-color: var(--dark-blue-hover);
+  }
+
+  
