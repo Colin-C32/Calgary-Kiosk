@@ -26,7 +26,7 @@ function App() {
         <PointsOfInterest {...{ setPage }} />
       ) : page === "HelpOnWay" ? (
         <HelpIsOnTheWay {...{ setPage }} />
-      ) : page === "FairInformation" ? (
+      ) : page === "FareInformation" ? (
         <FareInformation {...{ setPage }} />
       ) : (
         <ErrorPage {...{ setPage }} />
