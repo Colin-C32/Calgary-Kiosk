@@ -1,82 +1,108 @@
-// export default LanguageSelection;
-
-import React, { useState } from 'react';
-import './Language.css';
-import Modal from './Modal'; // Additional pop up for BETA development
-import './Modal.css';
-
-const LanguageSelection = ({ setPage }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
-  const [showModal, setShowModal] = useState(false);
-
-  const selectLanguage = (language) => {
-    console.log(`${language} selected`);
-    setSelectedLanguage(language);
-  };
-
-  const confirmSelection = () => {
-    if (selectedLanguage !== 'English') {
-      setShowModal(true);
-    } else {
-      console.log('English confirmed');
-      setPage('Home');
-    }
-  };
-
-  const closeModalAndGoHome = () => {
-    setSelectedLanguage('English');
-    setShowModal(false);
-    setTimeout(() => {
-      setPage('Home');
-    }, 10000);
-  };
-
-  const languages = [
-    { name: 'English', nativeName: '英语' },
-    { name: 'Français', nativeName: 'Français' },
-    { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
-    { name: 'Chinese', nativeName: '中文' },
-    { name: 'Español', nativeName: 'Español' },
-    { name: 'Arabic', nativeName: 'العربية' },
-    { name: 'Urdu', nativeName: 'اردو' },
-    { name: 'Hindi', nativeName: 'हिंदी' },
-    { name: 'Vietnamese', nativeName: 'Tiếng Việt' },
-    { name: 'German', nativeName: 'Deutsch' },
-    { name: 'Italian', nativeName: 'Italiano' },
-    { name: 'Korean', nativeName: '한국어' },
-    { name: 'Russian', nativeName: 'Русский' },
-    { name: 'Somali', nativeName: 'Soomaali' }
-  ];
-
-  return (
-    <div className="language-selection-container">
-      <div className="header">
-        <span className="back-arrow" onClick={() => setPage('Home')}>&#8592;</span>
-        <span className="title">Choose a Language</span>
-      </div>
-      <div className="languages-grid">
-        {languages.map(language => (
-          <button
-            key={language.name}
-            onClick={() => selectLanguage(language.name)}
-            className={selectedLanguage === language.name ? 'selected-button' : ''}
-          >
-            {language.name} ({language.nativeName})
-          </button>
-        ))}
-      </div>
-      <div className="footer">
-        <button className="cancel-button" onClick={() => setPage('Home')}>Cancel</button>
-        <button className="confirm-button" onClick={confirmSelection}>Confirm</button>
-      </div>
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        message="Sorry, the current language available is only English. Other languages are under BETA development."
-        onConfirm={closeModalAndGoHome}
-      />
-    </div>
-  );
-};
-
-export default LanguageSelection;
+.language-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #00337E;
+    border-radius: 10px;
+    background-color: #F5F6FF;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    color: #00337E;
+    font-size: 35px;
+    font-weight: 700;
+    width: 100%;
+  }
+  
+  .back-arrow {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .title {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .languages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .selected-button {
+    background-color: #2422aa !important;
+    color: rgb(255, 255, 255) !important;
+  }
+  
+  
+  .languages-grid button {
+    padding: 12px;
+    margin: 8px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    background-color: var(--dark-blue-faded);
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--dark-blue-shadow);
+    
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    gap: 20px;
+  }
+  
+  .cancel-button{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    color: white;
+    background-color: var(--dark-red-faded);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--dark-black-shadow);
+  }
+  .confirm-button {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    color: white;
+    background-color: var(--dark-green-faded);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--dark-black-shadow);
+  }
+  
+  .cancel-button {
+    color: var(--red);
+    background-color: var(--red-faded);
+    border: 1px solid var(--red);
+    box-shadow: 0 4px 8px var(--red-shadow); /* Red */
+  }
+  
+  .confirm-button {
+    color: var(--green);
+    background-color: var(--green-faded);
+    border: 1px solid var(--green);
+    box-shadow: 0 4px 8px var(--green-shadow); /* Green */
+  }
+  
