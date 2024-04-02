@@ -7,7 +7,7 @@
     background-color: #F5F6FF;
     padding: 20px;
     width: 80%;
-    margin: 30px auto;
+    margin: 20px auto;
   }
   
   .header {
@@ -37,45 +37,72 @@
     width: 100%;
   }
   .selected-button {
-    background-color: #0b0049 !important;
-    color: rgb(72, 255, 0) !important;
+    background-color: #2422aa !important;
+    color: rgb(255, 255, 255) !important;
   }
   
   
-  
   .languages-grid button {
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #00337E;
-    color: white;
+    padding: 12px;
+    margin: 8px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    background-color: var(--dark-blue-faded);
+    color: var(--dark-blue);
     font-size: 16px;
+    font-weight: bold;
+    text-align: center;
     cursor: pointer;
+    box-shadow: 0 4px 8px var(--dark-blue-shadow);
+    
   }
   
   .footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
+    gap: 20px;
   }
   
-  .cancel-button,
-  .confirm-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+  .cancel-button{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
     color: white;
+    background-color: var(--dark-red-faded);
     font-size: 16px;
+    font-weight: bold;
+    text-align: center;
     cursor: pointer;
+    box-shadow: 0 4px 8px var(--dark-black-shadow);
+  }
+  .confirm-button {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    color: white;
+    background-color: var(--dark-green-faded);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--dark-black-shadow);
   }
   
   .cancel-button {
-    background-color: #f83131; /* Red */
+    color: var(--red);
+    background-color: var(--red-faded);
+    border: 1px solid var(--red);
+    box-shadow: 0 4px 8px var(--red-shadow); /* Red */
   }
   
   .confirm-button {
-    background-color: #5ae75a; /* Green */
+    color: var(--green);
+    background-color: var(--green-faded);
+    border: 1px solid var(--green);
+    box-shadow: 0 4px 8px var(--green-shadow); /* Green */
   }
   
