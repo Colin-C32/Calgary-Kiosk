@@ -114,7 +114,7 @@ const NumberBox = ({ type, onChange }) => {
   const [value, setValue] = useState(0);
 
   const increment = () => {
-    const newValue = value + 1;
+    const newValue = value + 1 < 100 ? value + 1 : value;
     setValue(newValue);
     onChange(type, newValue);
   };
