@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Language.css';
-import Modal from './Modal'; // Additional pop up for BETA development
+import Modal from './Modal'; 
 import './Modal.css';
 
 const LanguageSelection = ({ setPage }) => {
@@ -22,17 +22,16 @@ const LanguageSelection = ({ setPage }) => {
   };
 
   const closeModalAndGoHome = () => {
-    setShowModal(false); // Close the modal
-    setPage('Home'); // Redirect to Home immediately
+    setShowModal(false); 
+    setPage('Home'); 
     setTimeout(() => {
-      setSelectedLanguage('English'); // Reset to English after 5 seconds
+      setSelectedLanguage('English'); 
     }, 5000);
   };
-  
 
   const languages = [
-    { name: 'English', nativeName: '英语' },
-    { name: 'Français', nativeName: 'Français' },
+    { name: 'English'},
+    { name: 'French', nativeName: 'Français' },
     { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
     { name: 'Chinese', nativeName: '中文' },
     { name: 'Español', nativeName: 'Español' },
@@ -60,18 +59,18 @@ const LanguageSelection = ({ setPage }) => {
             onClick={() => selectLanguage(language.name)}
             className={selectedLanguage === language.name ? 'selected-button' : ''}
           >
-            {language.name} ({language.nativeName})
+            {language.name}{language.nativeName && ` (${language.nativeName})`}
           </button>
         ))}
       </div>
       <div className="footer">
-  <button className="cancel-button" onClick={() => setPage('Home')}>
-    ✖ Cancel
-  </button>
-  <button className="confirm-button" onClick={confirmSelection}>
-    ✔ Confirm
-  </button>
-</div>
+        <button className="cancel-button" onClick={() => setPage('Home')}>
+          ✖ Cancel
+        </button>
+        <button className="confirm-button" onClick={confirmSelection}>
+          ✔ Confirm
+        </button>
+      </div>
 
       <Modal
         showModal={showModal}
@@ -85,4 +84,3 @@ const LanguageSelection = ({ setPage }) => {
 };
 
 export default LanguageSelection;
-
