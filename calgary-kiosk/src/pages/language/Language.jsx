@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import './Language.css';
-import Modal from './Modal'; 
-import './Modal.css';
+import React, { useState } from "react";
+import "./Language.css";
+import { Header } from "../../components/UI/Header";
+import Modal from "./Modal";
+import "./Modal.css";
 
 const LanguageSelection = ({ setPage }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [showModal, setShowModal] = useState(false);
 
   const selectLanguage = (language) => {
@@ -13,58 +14,60 @@ const LanguageSelection = ({ setPage }) => {
   };
 
   const confirmSelection = () => {
-    if (selectedLanguage !== 'English') {
+    if (selectedLanguage !== "English") {
       setShowModal(true);
     } else {
-      console.log('English confirmed');
-      setPage('Home');
+      console.log("English confirmed");
+      setPage("Home");
     }
   };
 
   const closeModalAndGoHome = () => {
-    setShowModal(false); 
-    setPage('Home'); 
+    setShowModal(false);
+    setPage("Home");
     setTimeout(() => {
-      setSelectedLanguage('English'); 
+      setSelectedLanguage("English");
     }, 5000);
   };
 
   const languages = [
-    { name: 'English'},
-    { name: 'French', nativeName: 'Français' },
-    { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
-    { name: 'Chinese', nativeName: '中文' },
-    { name: 'Español', nativeName: 'Español' },
-    { name: 'Arabic', nativeName: 'العربية' },
-    { name: 'Urdu', nativeName: 'اردو' },
-    { name: 'Hindi', nativeName: 'हिंदी' },
-    { name: 'Vietnamese', nativeName: 'Tiếng Việt' },
-    { name: 'German', nativeName: 'Deutsch' },
-    { name: 'Italian', nativeName: 'Italiano' },
-    { name: 'Korean', nativeName: '한국어' },
-    { name: 'Russian', nativeName: 'Русский' },
-    { name: 'Somali', nativeName: 'Soomaali' }
+    { name: "English" },
+    { name: "French", nativeName: "Français" },
+    { name: "Punjabi", nativeName: "ਪੰਜਾਬੀ" },
+    { name: "Chinese", nativeName: "中文" },
+    { name: "Español", nativeName: "Español" },
+    { name: "Arabic", nativeName: "العربية" },
+    { name: "Urdu", nativeName: "اردو" },
+    { name: "Hindi", nativeName: "हिंदी" },
+    { name: "Vietnamese", nativeName: "Tiếng Việt" },
+    { name: "German", nativeName: "Deutsch" },
+    { name: "Italian", nativeName: "Italiano" },
+    { name: "Korean", nativeName: "한국어" },
+    { name: "Russian", nativeName: "Русский" },
+    { name: "Somali", nativeName: "Soomaali" },
   ];
 
   return (
-    <div className="language-selection-container">
-      <div className="header">
-        <span className="back-arrow" onClick={() => setPage('Home')}>&#8592;</span>
-        <span className="title">Choose a Language</span>
-      </div>
+    <div>
+      <Header setPage={setPage} previousPage="Home" title="Select Langauge" />
       <div className="languages-grid">
-        {languages.map(language => (
+        {languages.map((language) => (
           <button
             key={language.name}
             onClick={() => selectLanguage(language.name)}
-            className={selectedLanguage === language.name ? 'selected-button' : ''}
+            className={
+              selectedLanguage === language.name
+                ? "selected-button language-button"
+                : "language-button"
+            }
           >
-            {language.name}{language.nativeName && ` (${language.nativeName})`}
+            {language.name}
+            {language.nativeName && ` (${language.nativeName})`}
           </button>
         ))}
       </div>
       <div className="footer">
-        <button className="cancel-button" onClick={() => setPage('Home')}>
+        <button className="cancel-button" onClick={() => setPage("Home")}>
           ✖ Cancel
         </button>
         <button className="confirm-button" onClick={confirmSelection}>
