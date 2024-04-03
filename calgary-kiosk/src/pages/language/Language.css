@@ -1,4 +1,5 @@
-.language-selection-container {
+
+  .language-selection-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,10 +7,11 @@
     border-radius: 10px;
     background-color: #F5F6FF;
     padding: 20px;
-    width: 80%;
+    width: 500px; 
+    max-width: 80%; 
     margin: 20px auto;
   }
-  
+
   .header {
     display: flex;
     align-items: center;
@@ -36,11 +38,11 @@
     margin-top: 20px;
     width: 100%;
   }
+
   .selected-button {
     background-color: #2422aa !important;
     color: rgb(255, 255, 255) !important;
   }
-  
   
   .languages-grid button {
     padding: 12px;
@@ -54,7 +56,19 @@
     text-align: center;
     cursor: pointer;
     box-shadow: 0 4px 8px var(--dark-blue-shadow);
-    
+    transition: background-color 0.3s; 
+  }
+  
+  .languages-grid button:hover {
+    background-color: var(--dark-blue-hover); 
+  }
+  
+  .cancel-button:hover {
+    background-color: var(--red-hover); 
+  }
+  
+  .confirm-button:hover {
+    background-color: var(--green-hover); 
   }
   
   .footer {
@@ -64,9 +78,9 @@
     margin-top: 40px;
     gap: 20px;
   }
-  
+
   .cancel-button{
-    width: 80%;
+    width: calc(50% - 10px);
     padding: 12px;
     border: 1px solid var(--dark-blue);
     border-radius: 10px;
@@ -79,7 +93,7 @@
     box-shadow: 0 4px 8px var(--dark-black-shadow);
   }
   .confirm-button {
-    width: 80%;
+    width: calc(50% - 10px);
     padding: 12px;
     border: 1px solid var(--dark-blue);
     border-radius: 10px;
@@ -96,13 +110,13 @@
     color: var(--red);
     background-color: var(--red-faded);
     border: 1px solid var(--red);
-    box-shadow: 0 4px 8px var(--red-shadow); /* Red */
+    box-shadow: 0 4px 8px var(--red-shadow); 
   }
   
   .confirm-button {
     color: var(--green);
     background-color: var(--green-faded);
     border: 1px solid var(--green);
-    box-shadow: 0 4px 8px var(--green-shadow); /* Green */
+    box-shadow: 0 4px 8px var(--green-shadow); 
   }
   
