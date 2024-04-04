@@ -8,6 +8,7 @@ import EmergencyHome from "./pages/emergency/EmergencyHome.jsx";
 import FareInformation from "./pages/transit/fare/FareInformation.jsx";
 import ErrorPage from "./pages/error/ErrorPage.jsx";
 import HelpIsOnTheWay from './pages/emergency/HelpIsOnTheWay.jsx';
+import TransitRoutes from './pages/transit/transitRoutes/TransitRoutes.jsx'
 
 function App() {
   const [page, setPage] = useState("Home");
@@ -26,6 +27,8 @@ function App() {
         <PointsOfInterest {...{ setPage }} />
       ) : page === "HelpOnWay" ? (
         <HelpIsOnTheWay {...{ setPage }} />
+      ) : page === "TransitRoutes" ? (
+        <TransitRoutes {...{ setPage }} />
       ) : page === "FareInformation" ? (
         <FareInformation {...{ setPage }} />
       ) : (
