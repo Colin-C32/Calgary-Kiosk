@@ -123,7 +123,6 @@ const TransitRoutes = ({ setPage }) => {
             <ChevronLeftOutlinedIcon />
           </button>
           <div className="bus-pagination-dots">
-            {/* Calculate the correct number of dots based on data groups */}
             {Array.from({ length: 2 }, (_, i) => 
               Math.floor(busDataIndex / 4) % 2 === i ? (
                 <CircleIcon key={i} />
