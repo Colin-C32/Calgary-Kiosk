@@ -47,6 +47,21 @@
     "Fares": "운임",
     "Reset": "초기화",
     "Medical Services": "의료 서비스",
-    "Safety & Order": "안전"
+    "Safety & Order": "안전",
+    "Request Immediate Help": "즉각적인 도움 요청",
+    "Contact Information Book": "연락처 정보 책자",
+    "REQUESTING HELP": "도움 요청",
+    "Update Request": "업데이트 요청",
+    "Request Submitted": "요청이 제출되었습니다.",
+    "Request Updated": "요청이 업데이트되었습니다.",
+    "HELP IS ON THE WAY": "도움이 곧 찾아옵니다",
+    "SUBMITTING REQUEST": "요청 제출 중",
+    "UPDATING REQUEST": "요청 업데이트 중",
+    "Medical": "의료",
+    "Fire": "불",
+    "Safety": "안전",
+    "Ambulance": "구급차",
+    "Police": "경찰",
+    "Firefighters": "소방관"
   }
 }

@@ -9,6 +9,7 @@ import "./Emergency.css";
 import "./HelpIsOnTheWay.css";
 
 const EmergencyHome = ({ setPage }) => {
+  const { t } = useTranslation();
   const [submitted, setSubmitted] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [title, setTitle] = useState("REQUESTING HELP....");
@@ -107,7 +108,7 @@ const EmergencyHome = ({ setPage }) => {
           }`}
         >
           <MedicalServicesIcon />
-          Medical Services (EMS)
+          {t("Ambulance")}
         </div>
         <div
           onClick={() => toggleCategory("Safety")}
@@ -116,7 +117,7 @@ const EmergencyHome = ({ setPage }) => {
           }`}
         >
           <HealthAndSafetyIcon />
-          Safety & Order (Police)
+          {t("Police")}
         </div>
         <div
           onClick={() => toggleCategory("Fire")}
@@ -125,19 +126,20 @@ const EmergencyHome = ({ setPage }) => {
           }`}
         >
           <WhatshotIcon />
-          Fire & Misc. (Firefighters)
+          {t("Firefighters")}
         </div>
       </div>
       <div className="subtitle">
-        Please select a category so our first responders can be better equipped
-        to assist you
+        {t(
+          "Please select a category so our first responders can be better equipped to assist you"
+        )}
       </div>
       <button
         className="information-option submit"
         style={{ "--progress": `${progress}%` }}
         onClick={handleButtonClick}
       >
-        <span className="submit-text">{submitButtonText}</span>
+        <span className="submit-text">{t(`${submitButtonText}`)}</span>
         <span
           className="submit-progress"
           style={{ width: `${progress}%` }}
@@ -147,7 +149,7 @@ const EmergencyHome = ({ setPage }) => {
         className="emergency-option cancel"
         onClick={() => setPage("Emergency")}
       >
-        Cancel Request
+        {t("Cancel Request")}
       </div>
       <Taskbar setPage={setPage} />
     </div>
