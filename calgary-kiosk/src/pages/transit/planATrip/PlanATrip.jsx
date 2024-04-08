@@ -1,3 +1,4 @@
+/* global google */
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import {
   DirectionsRenderer,
@@ -31,7 +32,9 @@ const center = {
 
 const libraries = ["places", "geometry"];
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const generateGoogleMapsLink = (lat, lng) => {
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+};
 
 const PlanATrip = ({ setPage }) => {
   const { t } = useTranslation();
@@ -155,6 +158,10 @@ const PlanATrip = ({ setPage }) => {
     setCurrentPage(new_page);
   };
 
+  const qrLink = location
+    ? generateGoogleMapsLink(location.lat, location.lng)
+    : null;
+
   return (
     <div className="plan-a-trip-page">
       <Header setPage={setPage} previousPage="Transit" title="Plan a Trip" />
@@ -210,6 +217,19 @@ const PlanATrip = ({ setPage }) => {
           onLoad={onMapLoad}
         >
           {location && <Marker position={location} />}
+          {location && (
+            <Marker
+              position={center}
+              icon={{
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: "blue",
+                fillOpacity: 0.8,
+                strokeColor: "white",
+                strokeWeight: 2,
+                scale: 10,
+              }}
+            />
+          )}
           {directions && (
             <DirectionsRenderer
               directions={directions}
@@ -298,7 +318,7 @@ const PlanATrip = ({ setPage }) => {
           </div>
         </div>
       )}
-      <Taskbar setPage={setPage} />
+      <Taskbar setPage={setPage} qrLink={qrLink} />
     </div>
   );
 };

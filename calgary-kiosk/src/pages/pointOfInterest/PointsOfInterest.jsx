@@ -315,6 +315,10 @@ const data = [
 
 const libraries = ["places", "geometry"];
 
+const generateGoogleMapsLink = (lat, lng) => {
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+}
+
 const PointsOfInterest = ({ setPage }) => {
   const { t } = useTranslation();
   const [selected_place, setSelectedPlace] = useState(null);
@@ -412,6 +416,8 @@ const PointsOfInterest = ({ setPage }) => {
 
   if (loadError) return <div>Error loading maps</div>;
   if (!isLoaded) return <div>Loading Maps...</div>;
+
+  const qrLink = location ? generateGoogleMapsLink(location.lat, location.lng) : null
 
   return (
     <div className="points-of-interest-page">
@@ -636,7 +642,7 @@ const PointsOfInterest = ({ setPage }) => {
           </div>
         )}
       </div>
-      <Taskbar setPage={setPage} />
+      <Taskbar setPage={setPage} qrLink={qrLink}/>
     </div>
   );
 };
