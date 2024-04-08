@@ -30,15 +30,6 @@ const center = {
   lng: -114.07242089509964,
 };
 
-const center_icon = {
-  path: google.maps.SymbolPath.CIRCLE,
-  fillColor: 'blue',
-  fillOpacity: 0.8,
-  strokeColor: 'white',
-  strokeWeight: 2,
-  scale: 10, 
-}
-
 const data = [
   { name: "Stephen Avenue Walk", distance: 0.18, lat: 51.0458969, lng: -114.0702167 , type: 'shopping', description: `A vibrant pedestrian street in downtown Calgary, known for its historic buildings, shops, restaurants, and public art installations.`},
   { name: "Calgary Farmers' Market South", distance: 6.98, lat: 50.9854596, lng: -114.0517599 , type: 'shopping', description: `A bustling marketplace offering fresh produce, artisanal foods, and unique local goods, located in the southern part of the city.`},
@@ -222,7 +213,6 @@ const PointsOfInterest = ({ setPage }) => {
           }}
           center={center}
           zoom={10}
-          onClick={(event) => selectPlace(event.latLng)}
           onLoad={onMapLoad}
         >
           {location && <Marker position={location} />}
@@ -239,7 +229,14 @@ const PointsOfInterest = ({ setPage }) => {
               }}
             />
           )}
-          {location && <Marker position={center} icon={center_icon}/>}
+          {location && <Marker position={center} icon={{
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: 'blue',
+            fillOpacity: 0.8,
+            strokeColor: 'white',
+            strokeWeight: 2,
+            scale: 10, 
+          }}/>}
         </GoogleMap>
       </div>
       <div className="bottom-of-page">
