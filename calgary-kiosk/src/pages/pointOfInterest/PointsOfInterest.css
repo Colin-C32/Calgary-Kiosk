@@ -1,5 +1,17 @@
 .points-of-interest-page {
+  .selected-place {
+    margin: 20px auto;
+    width: 80%;
 
+    .selected-place-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .selected-place-description {
+      margin: 3px 0px;
+    }
+  }
 
   .bottom-of-page {
     height: 313px;
@@ -271,9 +283,9 @@
     height: 25px;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #00337E;
-    background-color: #F5F6FF;
-    border: 3px solid #00337E;
+    color: #00337e;
+    background-color: #f5f6ff;
+    border: 3px solid #00337e;
     border-radius: 10px;
     width: 250px;
     margin-bottom: 10px;
