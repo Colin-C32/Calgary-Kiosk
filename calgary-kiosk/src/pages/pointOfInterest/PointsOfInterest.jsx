@@ -369,6 +369,7 @@ const PointsOfInterest = ({ setPage }) => {
           </div>
         )}
       </div>
+      <Taskbar setPage={setPage} />
     </div>
   );
 };
