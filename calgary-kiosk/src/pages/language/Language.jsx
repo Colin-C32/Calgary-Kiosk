@@ -60,7 +60,7 @@ const LanguageSelection = ({ setPage }) => {
 
   return (
     <div>
-      <Header setPage={setPage} previousPage="Home" title="Select Langauge" />
+      <Header setPage={setPage} previousPage="Home" title="Select Language" />
       <div className="languages-grid">
         {languages.map((language) => (
           <button
