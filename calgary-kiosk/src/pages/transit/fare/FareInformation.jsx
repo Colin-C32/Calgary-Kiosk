@@ -3,6 +3,8 @@ import { Header } from "../../../components/UI/Header";
 import { Taskbar } from "../../../components/taskbar/Taskbar";
 import "./FareInformation.css";
 
+const FARE_QR_LINK = 'https://www.calgarytransit.com/fares---passes/my-fare.html'
+
 const FareInformation = ({ setPage }) => {
   const [fareData, setFareData] = useState({
     AdultSingleUse: 0,
@@ -124,7 +126,7 @@ const FareInformation = ({ setPage }) => {
         <h3 className="reset-fare-cost" id="reset-fare-cost" onClick={() => {resetData()}}>Reset</h3>
         <h3 id="total-fare-cost">Total: ${calculateTotalCost().toFixed(2)}</h3>
       </div>
-      <Taskbar setPage={setPage} />
+      <Taskbar setPage={setPage} qrLink={FARE_QR_LINK}/>
     </div>
   );
 };
