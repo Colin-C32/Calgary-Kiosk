@@ -104,7 +104,7 @@ const FareInformation = ({ setPage }) => {
           <div class="age-title">{t("Youth")} (13-17)</div>
           <div class="age-title">{t("Child")} (0-12)</div>
 
-          <div class="duration">Single Use (90min)</div>
+          <div class="duration">{t("Single Use")} (90min)</div>
           <NumberBox
             type="AdultSingleUse"
             valueProp={fareData.AdultSingleUse}
@@ -122,7 +122,7 @@ const FareInformation = ({ setPage }) => {
           />
 
           <div class="middle-row">
-            <div class="duration">Day Pass (till EOD)</div>
+            <div class="duration">{t("Day Pass")} (till EOD)</div>
             <NumberBox
               type="AdultDayPass"
               valueProp={fareData.AdultDayPass}
@@ -140,7 +140,7 @@ const FareInformation = ({ setPage }) => {
             />
           </div>
 
-          <div class="duration">Month Pass (1 mon)</div>
+          <div class="duration">{t("Month Pass")} (1 mon)</div>
           <NumberBox
             type="AdultMonthPass"
             valueProp={fareData.AdultMonthPass}
@@ -160,7 +160,7 @@ const FareInformation = ({ setPage }) => {
       </div>
       <div className="cost-and-reset">
         <div class="box" id="scan-text">
-          <p>Scan to buy tickets!</p>
+          <p>{t("Scan to buy tickets!")}</p>
         </div>
         <h3
           className="reset-fare-cost"
@@ -169,9 +169,11 @@ const FareInformation = ({ setPage }) => {
             resetData();
           }}
         >
-          Reset
+          {t("Reset")}
         </h3>
-        <h3 id="total-fare-cost">Total: ${calculateTotalCost().toFixed(2)}</h3>
+        <h3 id="total-fare-cost">
+          {t("Total")}: ${calculateTotalCost().toFixed(2)}
+        </h3>
       </div>
       <Taskbar setPage={setPage} qrLink={FARE_QR_LINK} />
     </div>

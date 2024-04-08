@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.25rem;
   font-weight: 500;
   font-size: 1.5rem;
   color: var(--dark-blue);
@@ -93,14 +93,14 @@
   margin: 0;
 }
 
-
 .cost-and-reset {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 92%;
   color: var(--dark-blue);
   justify-content: space-between;
   margin-left: 4%;
+  border: 2px solid red;
 }
 
 .reset-fare-cost {
