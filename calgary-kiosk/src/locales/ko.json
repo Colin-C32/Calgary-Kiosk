@@ -27,11 +27,26 @@
     "Single Use": "일회용",
     "Free": "무료",
     "Day Pass": "일일 통행권",
-    "Month Pass": "월 패스",
+    "Month Pass": "월간 이용권",
     "Fare Calculator": "요금 계산기",
     "Total": "총",
     "Transit Routes & Schedules": "대중교통 노선",
     "Plan a Trip!": "여행을 계획해보세요!",
-    "Fare Information": "운임정보"
+    "Fare Information": "운임정보",
+    "Confirm": "확인하다",
+    "Cancel": "취소",
+    "Select Langauge": "언어 선택",
+    "Transit Routes": "대중교통 노선",
+    "Plan a Trip": "여행 계획하기",
+    "Directions": "지도",
+    "Search Results": "검색 결과",
+    "Ride the": "타고",
+    "towards": "...쪽으로",
+    "From": "에서",
+    "To": "에게",
+    "Fares": "운임",
+    "Reset": "초기화",
+    "Medical Services": "의료 서비스",
+    "Safety & Order": "안전"
   }
 }
