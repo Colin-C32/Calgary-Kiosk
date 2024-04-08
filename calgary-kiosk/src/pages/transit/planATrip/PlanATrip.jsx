@@ -161,7 +161,7 @@ const PlanATrip = ({ setPage }) => {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder={t("Search")}
           value={search_query}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => setIsDropdownVisible(true)}
@@ -189,7 +189,9 @@ const PlanATrip = ({ setPage }) => {
                 </button>
               ))
             ) : (
-              <span className="search-bar-empty">Search for results...</span>
+              <span className="search-bar-empty">
+                {t("Search for results")}
+              </span>
             )}
           </div>
         )}
@@ -255,7 +257,7 @@ const PlanATrip = ({ setPage }) => {
       </div>
       {directions && (
         <div className="map-directions">
-          <div className="directions-header">Directions</div>
+          <div className="directions-header">{t("Directions")}</div>
           {directions.routes[0].legs.map((leg, legIndex) => (
             <div className="map-directions-body" key={legIndex}>
               {leg.steps.map((step, stepIndex) => (
@@ -268,7 +270,7 @@ const PlanATrip = ({ setPage }) => {
 
       {search_results.length > 0 && (
         <div className="search-results">
-          <div className="search-header">Search Results</div>
+          <div className="search-header">{t("Search Results")}</div>
           <div className="search-results-body">
             {currentItems.map((place, index) => (
               <button
