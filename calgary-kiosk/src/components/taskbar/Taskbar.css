@@ -17,3 +17,18 @@
 .taskbar-icon:hover {
   color: var(--gray);
 }
+
+.taskbar-qr {
+  margin-left: 5%;
+  position: relative;
+  width: 85px;
+  height: 85px;
+}
+
+.taskbar-qr-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
