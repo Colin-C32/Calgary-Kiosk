@@ -642,7 +642,7 @@ const PointsOfInterest = ({ setPage }) => {
           </div>
         )}
       </div>
-      <Taskbar setPage={setPage} qrLink={qrLink}/>
+      <Taskbar setPage={setPage} qrLink={qrLink} qrLabel={t('Scan to open maps')}/>
     </div>
   );
 };
