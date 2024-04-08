@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import "./Language.css";
 import { Header } from "../../components/UI/Header";
+import { useTranslation } from "react-i18next";
 import Modal from "./Modal";
 import "./Modal.css";
 
 const LanguageSelection = ({ setPage }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [showModal, setShowModal] = useState(false);
+  const { i18n } = useTranslation();
 
   const selectLanguage = (language) => {
     console.log(`${language} selected`);
     setSelectedLanguage(language);
   };
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const confirmSelection = () => {
+    changeLanguage("ko");
     if (selectedLanguage !== "English") {
       setShowModal(true);
     } else {

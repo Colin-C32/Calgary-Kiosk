@@ -1,6 +1,7 @@
 // Modal.js
-import React, { useEffect, useState } from 'react';
-import './Modal.css';
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import "./Modal.css";
 
 const Modal = ({ showModal, setShowModal, message, onConfirm, countdown }) => {
   const [timer, setTimer] = useState(countdown);
@@ -24,10 +25,12 @@ const Modal = ({ showModal, setShowModal, message, onConfirm, countdown }) => {
       <div className="modal-content">
         <p>{message}</p>
         <p>Redirecting to Home Screen in {timer} seconds...</p>
-        <button onClick={() => {
-          onConfirm();
-          setShowModal(false);
-        }}>
+        <button
+          onClick={() => {
+            onConfirm();
+            setShowModal(false);
+          }}
+        >
           OK
         </button>
       </div>

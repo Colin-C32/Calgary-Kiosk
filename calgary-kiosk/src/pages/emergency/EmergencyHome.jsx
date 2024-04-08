@@ -1,9 +1,9 @@
-
 import React from "react";
 import "./Emergency.css";
 import { Header } from "../../components/UI/Header";
 import { Taskbar } from "../../components/taskbar/Taskbar";
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'; // Importing a phone icon
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import { useTranslation } from "react-i18next";
 
 const tableData = [
   { name: "Emergency Services", number: "911" },
@@ -27,7 +27,7 @@ const EmergencyHome = ({ setPage }) => {
           className="emergency-option"
         >
           <PhoneInTalkIcon style={{ marginRight: "8px" }} />
-          Request Immediate Help 
+          Request Immediate Help
         </button>
       </div>
       <div className="contact-info-container">

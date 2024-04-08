@@ -1,5 +1,6 @@
 import React from "react";
 import { Taskbar } from "../../components/taskbar/Taskbar";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 
 const Home = ({ setPage }) => {

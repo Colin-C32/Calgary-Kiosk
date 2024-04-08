@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "../../components/UI/Header";
 import { Taskbar } from "../../components/taskbar/Taskbar";
-import CircleIcon from '@mui/icons-material/Circle';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
-import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
-import './TransitHome.css';
+import CircleIcon from "@mui/icons-material/Circle";
+import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
+import ChevronLeftOutlinedIcon from "@mui/icons-material/ChevronLeftOutlined";
+import ChevronRightOutlinedIcon from "@mui/icons-material/ChevronRightOutlined";
+import { useTranslation } from "react-i18next";
+import "./TransitHome.css";
 
 const delayData = [
   { number: "129", route: "Dalhousie/Sage Hill", delay: "5min delay" },
-  { number: "113", route: "North Ranchlands/Scenic Acres", delay: "2min delay" },
+  {
+    number: "113",
+    route: "North Ranchlands/Scenic Acres",
+    delay: "2min delay",
+  },
   { number: "96", route: "Douglasdale/Mckenzie", delay: "13min delay" },
-  { number: "217", route: "Cranston", delay: "1min delay" }
+  { number: "217", route: "Cranston", delay: "1min delay" },
 ];
 
 const TransitHome = ({ setPage }) => {
@@ -36,7 +41,9 @@ const TransitHome = ({ setPage }) => {
   };
 
   const handlePrevious = () => {
-    setDelayDataIndex((prevIndex) => (prevIndex - 1 + delayData.length) % delayData.length);
+    setDelayDataIndex(
+      (prevIndex) => (prevIndex - 1 + delayData.length) % delayData.length
+    );
     startInterval();
   };
 

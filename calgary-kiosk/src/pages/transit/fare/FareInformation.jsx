@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Header } from "../../../components/UI/Header";
 import { Taskbar } from "../../../components/taskbar/Taskbar";
+import { useTranslation } from "react-i18next";
 import "./FareInformation.css";
 
 const FareInformation = ({ setPage }) => {
