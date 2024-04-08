@@ -80,7 +80,7 @@ const data = {
 
 const libraries = ["places", "geometry"];
 
-const PlanATrip = ({ setPage }) => {
+const PointsOfInterest = ({ setPage }) => {
   const [location, setLocation] = useState(null);
   const [directions, setDirections] = useState(null);
   const [search_query, setSearchQuery] = useState("");
@@ -468,4 +468,4 @@ const PlanATrip = ({ setPage }) => {
   );
 };
 
-export default PlanATrip;
+export default PointsOfInterest;
