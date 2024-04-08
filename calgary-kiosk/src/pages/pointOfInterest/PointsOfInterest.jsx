@@ -89,7 +89,7 @@ const PointsOfInterest = ({ setPage }) => {
   const map_ref = useRef(null);
 
   const [activeFilters, setActiveFilters] = useState(['shopping']);
-  const [distanceRange, setDistanceRange] = useState([0, 50]);
+  const [distanceRange, setDistanceRange] = useState([0, 30]);
   const [filteredData, setFilteredData] = useState([])
 
   const updateDirections = async (loc) => {
@@ -344,7 +344,7 @@ const PointsOfInterest = ({ setPage }) => {
                   getAriaValueText={valueLabelFormat}
                   valueLabelFormat={valueLabelFormat}
                   min={0}
-                  max={50}
+                  max={30}
                 />
               </div>
             </div>
