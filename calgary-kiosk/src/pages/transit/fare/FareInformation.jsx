@@ -53,53 +53,53 @@ const FareInformation = ({ setPage }) => {
         title="Fare Information"
       />
       <div class="fare-container">
-        <div class="fare-title">Fares</div>
+        <div class="fare-title">{t("Fares")}</div>
         <div class="fare-info-container">
           <div></div>
-          <div class="age-title">Adult (18+)</div>
-          <div class="age-title">Youth (13-17)</div>
-          <div class="age-title">Child (0-12)</div>
+          <div class="age-title">{t("Adult")} (18+)</div>
+          <div class="age-title">{t("Youth")} (13-17)</div>
+          <div class="age-title">{t("Child")} (0-12)</div>
 
-          <div class="duration">Single Use (90min)</div>
+          <div class="duration">{t("Single Use")} (90min)</div>
           <div class="price">$3.70</div>
           <div class="price">$2.50</div>
-          <div class="price">Free</div>
+          <div class="price">{t("Free")}</div>
 
           <div class="middle-row">
-            <div class="duration">Day Pass (till EOD)</div>
+            <div class="duration">{t("Day Pass")} (till EOD)</div>
             <div class="price">$11.60</div>
             <div class="price">$8.50</div>
-            <div class="price">Free</div>
+            <div class="price">{t("Free")}</div>
           </div>
 
-          <div class="duration">Month Pass (1 mon)</div>
+          <div class="duration">{t("Month Pass")} (1 mon)</div>
           <div class="price">$115.00</div>
           <div class="price">$82.50</div>
-          <div class="price">Free</div>
+          <div class="price">{t("Free")}</div>
         </div>
       </div>
 
       <div class="fare-calculator-container">
-        <div class="fare-title">Fare Calculator</div>
+        <div class="fare-title">{t("Fare Calculator")}</div>
         <div class="fare-info-container">
           <div></div>
-          <div class="age-title">Adult (18+)</div>
-          <div class="age-title">Youth (13-17)</div>
-          <div class="age-title">Child (0-12)</div>
+          <div class="age-title">{t("Adult")} (18+)</div>
+          <div class="age-title">{t("Youth")} (13-17)</div>
+          <div class="age-title">{t("Child")} (0-12)</div>
 
-          <div class="duration">Single Use (90min)</div>
+          <div class="duration">{t("Single Use")} (90min)</div>
           <NumberBox type="AdultSingleUse" onChange={handleValueChange} />
           <NumberBox type="YouthSingleUse" onChange={handleValueChange} />
           <NumberBox type="ChildSingleUse" onChange={handleValueChange} />
 
           <div class="middle-row">
-            <div class="duration">Day Pass (till EOD)</div>
+            <div class="duration">{t("Day Pass")} (till EOD)</div>
             <NumberBox type="AdultDayPass" onChange={handleValueChange} />
             <NumberBox type="YouthDayPass" onChange={handleValueChange} />
             <NumberBox type="ChildDayPass" onChange={handleValueChange} />
           </div>
 
-          <div class="duration">Month Pass (1 mon)</div>
+          <div class="duration">{t("Month Pass")} (1 mon)</div>
           <NumberBox type="AdultMonthPass" onChange={handleValueChange} />
           <NumberBox type="YouthMonthPass" onChange={handleValueChange} />
           <NumberBox type="ChildMonthPass" onChange={handleValueChange} />
@@ -107,7 +107,9 @@ const FareInformation = ({ setPage }) => {
       </div>
 
       <Taskbar setPage={setPage} />
-      <h3 id="total-fare-cost">Total: ${calculateTotalCost().toFixed(2)}</h3>
+      <h3 id="total-fare-cost">
+        {t("Total")}: ${calculateTotalCost().toFixed(2)}
+      </h3>
     </div>
   );
 };
