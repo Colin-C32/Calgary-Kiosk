@@ -1,3 +1,7 @@
+.home-page {
+  position: relative;
+}
+
 .welcome-header-container {
   margin-top: 5%;
 }
@@ -17,7 +21,7 @@
 .information-container {
   display: flex;
   justify-content: space-evenly;
-  margin: 5vh 0;
+  margin: 40px 0;
 }
 
 .information-option {
@@ -64,10 +68,14 @@
 }
 
 .instructions {
+  position: absolute;
+  left: 50%;
+  bottom: 120px;
+  transform: translateX(-50%);
   font-style: italic;
   text-align: center;
   font-weight: 900;
-  width: 95%;
+  width: 90%;
   margin: auto;
   display: flex;
   justify-content: space-between;
