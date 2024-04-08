@@ -15,7 +15,7 @@
 
   .bottom-of-page {
     height: 313px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .search-bar {
     position: relative;
