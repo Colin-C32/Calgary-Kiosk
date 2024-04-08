@@ -64,7 +64,7 @@ const TransitHome = ({ setPage }) => {
             {delayData[delayDataIndex].route}
           </div>
           <div className="transit-info-delay">
-            {delayData[delayDataIndex].delay}
+            {t(`${delayData[delayDataIndex].delay}`)}
           </div>
         </div>
         <div className="transit-pagination">
