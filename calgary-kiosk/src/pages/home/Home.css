@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 1.5rem;
   color: var(--dark-blue);
@@ -66,24 +67,15 @@
   font-style: italic;
   text-align: center;
   font-weight: 900;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin: auto;
   width: 95%;
-  align-items: center;
-}
-
-#scan-text {
-  grid-column: 1;
-}
-
-#language-text {
-  grid-column: 3;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .french-text {
   color: var(--gray);
+  margin-bottom: 25px;
 }
 
 .box {

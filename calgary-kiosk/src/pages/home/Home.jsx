@@ -1,14 +1,16 @@
 import React from "react";
 import { Taskbar } from "../../components/taskbar/Taskbar";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 
 const Home = ({ setPage }) => {
+  const { t } = useTranslation();
   return (
     <div>
       <div class="welcome-header-container">
         <h1 class="welcome-header">Welcome to Calgary</h1>
         <h1 class="welcome-header" id="non-english-header">
-          Bienvenue à Calgary
+          {t("Bienvenue à Calgary")}
         </h1>
       </div>
       <div class="information-container">
@@ -18,7 +20,7 @@ const Home = ({ setPage }) => {
           }}
           class="information-option"
         >
-          Transit Information
+          {t("Transit Information")}
         </div>
         <div
           onClick={() => {
@@ -26,7 +28,7 @@ const Home = ({ setPage }) => {
           }}
           class="information-option"
         >
-          Points of Interest
+          {t("Points of Interest")}
         </div>
       </div>
       <div
@@ -35,17 +37,17 @@ const Home = ({ setPage }) => {
         }}
         class="emergency-option"
       >
-        Emergency Contact
+        {t("Emergency Contact")}
       </div>
       <div className="instructions">
         <div class="box" id="scan-text">
           <p>Scan to take me with you!</p>
-          <p class="french-text">Scanne pour m'emmener avec toi!</p>
+          <p class="french-text">{t("Scanne pour m'emmener avec toi!")}</p>
         </div>
 
         <div class="box" id="language-text">
           <p>Change language!</p>
-          <p class="french-text">Changer de langue!</p>
+          <p class="french-text">{t("Changer de langue!")}</p>
         </div>
       </div>
       <Taskbar setPage={setPage} />

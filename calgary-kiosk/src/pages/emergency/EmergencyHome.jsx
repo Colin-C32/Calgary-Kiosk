@@ -1,9 +1,9 @@
-
 import React from "react";
 import "./Emergency.css";
 import { Header } from "../../components/UI/Header";
 import { Taskbar } from "../../components/taskbar/Taskbar";
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'; // Importing a phone icon
+import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import { useTranslation } from "react-i18next";
 
 const tableData = [
   { name: "Emergency Services", number: "911" },
@@ -18,6 +18,7 @@ const tableData = [
 ];
 
 const EmergencyHome = ({ setPage }) => {
+  const { t } = useTranslation();
   return (
     <div className="emergency-contact-container">
       <Header setPage={setPage} previousPage="Home" title="Emergency Contact" />
@@ -27,16 +28,16 @@ const EmergencyHome = ({ setPage }) => {
           className="emergency-option"
         >
           <PhoneInTalkIcon style={{ marginRight: "8px" }} />
-          Request Immediate Help 
+          {t("Request Immediate Help")}
         </button>
       </div>
       <div className="contact-info-container">
-        <div className="title">Contact Information Book</div>
+        <div className="title">{t("Contact Information Book")}</div>
         <table className="contact-info-table">
           <tbody>
             {tableData.map((item, index) => (
               <tr key={index}>
-                <td>{item.name}</td>
+                <td>{t(`${item.name}`)}</td>
                 <td>{item.number}</td>
               </tr>
             ))}
