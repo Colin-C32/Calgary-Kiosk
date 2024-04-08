@@ -6,19 +6,19 @@ import "./Home.css";
 const Home = ({ setPage }) => {
   const { t } = useTranslation();
   return (
-    <div>
-      <div class="welcome-header-container">
-        <h1 class="welcome-header">Welcome to Calgary</h1>
-        <h1 class="welcome-header" id="non-english-header">
+    <div className="">
+      <div className="welcome-header-container">
+        <h1 className="welcome-header">Welcome to Calgary</h1>
+        <h1 className="welcome-header" id="non-english-header">
           {t("Bienvenue à Calgary")}
         </h1>
       </div>
-      <div class="information-container">
+      <div className="information-container">
         <div
           onClick={() => {
             setPage("Transit");
           }}
-          class="information-option"
+          className="information-option"
         >
           {t("Transit Information")}
         </div>
@@ -26,7 +26,7 @@ const Home = ({ setPage }) => {
           onClick={() => {
             setPage("PointsOfInterest");
           }}
-          class="information-option"
+          className="information-option"
         >
           {t("Points of Interest")}
         </div>
@@ -35,19 +35,19 @@ const Home = ({ setPage }) => {
         onClick={() => {
           setPage("Emergency");
         }}
-        class="emergency-option"
+        className="emergency-option"
       >
         {t("Emergency Contact")}
       </div>
       <div className="instructions">
-        <div class="box" id="scan-text">
+        <div className="box" id="scan-text">
           <p>Scan to take me with you!</p>
-          <p class="french-text">{t("Scanne pour m'emmener avec toi!")}</p>
+          <p className="french-text">{t("Scanne pour m'emmener avec toi!")}</p>
         </div>
 
-        <div class="box" id="language-text">
+        <div className="box" id="language-text">
           <p>Change language!</p>
-          <p class="french-text">{t("Changer de langue!")}</p>
+          <p className="french-text">{t("Changer de langue!")}</p>
         </div>
       </div>
       <Taskbar setPage={setPage} />
