@@ -34,6 +34,7 @@ const libraries = ["places", "geometry"];
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const PlanATrip = ({ setPage }) => {
+  const { t } = useTranslation();
   const [location, setLocation] = useState(null);
   const [directions, setDirections] = useState(null);
   const [search_query, setSearchQuery] = useState("");

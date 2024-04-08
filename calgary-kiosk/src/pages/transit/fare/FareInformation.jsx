@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import "./FareInformation.css";
 
 const FareInformation = ({ setPage }) => {
+  const { t } = useTranslation();
   const [fareData, setFareData] = useState({
     AdultSingleUse: 0,
     YouthSingleUse: 0,

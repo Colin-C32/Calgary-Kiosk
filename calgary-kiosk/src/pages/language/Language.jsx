@@ -8,7 +8,7 @@ import "./Modal.css";
 const LanguageSelection = ({ setPage }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [showModal, setShowModal] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const selectLanguage = (language) => {
     console.log(`${language} selected`);
@@ -75,10 +75,10 @@ const LanguageSelection = ({ setPage }) => {
       </div>
       <div className="footer">
         <button className="cancel-button" onClick={() => setPage("Home")}>
-          ✖ Cancel
+          ✖ {t("Cancel")}
         </button>
         <button className="confirm-button" onClick={confirmSelection}>
-          ✔ Confirm
+          ✔ {t("Confirm")}
         </button>
       </div>
 

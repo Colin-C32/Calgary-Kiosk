@@ -23,6 +23,7 @@ const busData = [
 ];
 
 const TransitRoutes = ({ setPage }) => {
+  const { t } = useTranslation();
   const apiKey = "AIzaSyDywEmVrxAsXW4uDgQUSn3xZlQxkbC8syM";
   const totalGroups = Math.ceil(busData.length / 4);
 

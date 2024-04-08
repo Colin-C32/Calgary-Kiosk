@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./Modal.css";
 
 const Modal = ({ showModal, setShowModal, message, onConfirm, countdown }) => {
+  const { t } = useTranslation();
   const [timer, setTimer] = useState(countdown);
 
   useEffect(() => {

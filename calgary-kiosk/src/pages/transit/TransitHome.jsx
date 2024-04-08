@@ -20,6 +20,7 @@ const delayData = [
 ];
 
 const TransitHome = ({ setPage }) => {
+  const { t } = useTranslation();
   const [delayDataIndex, setDelayDataIndex] = useState(0);
   let intervalRef = React.useRef(null);
 
@@ -91,7 +92,7 @@ const TransitHome = ({ setPage }) => {
           }}
           className="transit-option"
         >
-          Transit Routes & Schedules
+          {t("Transit Routes & Schedules")}
         </div>
         <div
           onClick={() => {
@@ -99,7 +100,7 @@ const TransitHome = ({ setPage }) => {
           }}
           className="transit-option"
         >
-          Plan a Trip!
+          {t("Plan a Trip!")}
         </div>
         <div
           onClick={() => {
@@ -107,7 +108,7 @@ const TransitHome = ({ setPage }) => {
           }}
           className="transit-option"
         >
-          Fare Information
+          {t("Fare Information")}
         </div>
       </div>
       <Taskbar setPage={setPage} />
