@@ -1,3 +1,4 @@
+/* global google */
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import {
   DirectionsRenderer,
@@ -372,4 +373,4 @@ const PointsOfInterest = ({ setPage }) => {
   );
 };
 
-export default PointsofInterest;
+export default PointsOfInterest;
