@@ -6,9 +6,9 @@ import Modal from "./Modal";
 import "./Modal.css";
 
 const LanguageSelection = ({ setPage }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("English");
   const [showModal, setShowModal] = useState(false);
   const { t, i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
   const selectLanguage = (language) => {
     console.log(`${language} selected`);
@@ -20,11 +20,11 @@ const LanguageSelection = ({ setPage }) => {
   };
 
   const confirmSelection = () => {
-    if (selectedLanguage === "English") {
+    if (selectedLanguage === "en") {
       changeLanguage("en");
       setShowModal(false);
       setPage("Home");
-    } else if (selectedLanguage === "Korean") {
+    } else if (selectedLanguage === "ko") {
       changeLanguage("ko");
       setShowModal(false);
       setPage("Home");
@@ -42,20 +42,20 @@ const LanguageSelection = ({ setPage }) => {
   };
 
   const languages = [
-    { name: "English" },
-    { name: "French", nativeName: "Français" },
-    { name: "Punjabi", nativeName: "ਪੰਜਾਬੀ" },
-    { name: "Chinese", nativeName: "中文" },
-    { name: "Español", nativeName: "Español" },
-    { name: "Arabic", nativeName: "العربية" },
-    { name: "Urdu", nativeName: "اردو" },
-    { name: "Hindi", nativeName: "हिंदी" },
-    { name: "Vietnamese", nativeName: "Tiếng Việt" },
-    { name: "German", nativeName: "Deutsch" },
-    { name: "Italian", nativeName: "Italiano" },
-    { name: "Korean", nativeName: "한국어" },
-    { name: "Russian", nativeName: "Русский" },
-    { name: "Somali", nativeName: "Soomaali" },
+    { name: "English", lng: "en" },
+    { name: "French", nativeName: "Français", lng: "fr" },
+    { name: "Punjabi", nativeName: "ਪੰਜਾਬੀ", lng: "pj" },
+    { name: "Chinese", nativeName: "中文", lng: "ch" },
+    { name: "Español", nativeName: "Español", lng: "es" },
+    { name: "Arabic", nativeName: "العربية", lng: "ab" },
+    { name: "Urdu", nativeName: "اردو", lng: "ud" },
+    { name: "Hindi", nativeName: "हिंदी", lng: "hd" },
+    { name: "Vietnamese", nativeName: "Tiếng Việt", lng: "vt" },
+    { name: "German", nativeName: "Deutsch", lng: "ge" },
+    { name: "Italian", nativeName: "Italiano", lng: "it" },
+    { name: "Korean", nativeName: "한국어", lng: "ko" },
+    { name: "Russian", nativeName: "Русский", lng: "ru" },
+    { name: "Somali", nativeName: "Soomaali", lng: "sm" },
   ];
 
   return (
@@ -65,9 +65,9 @@ const LanguageSelection = ({ setPage }) => {
         {languages.map((language) => (
           <button
             key={language.name}
-            onClick={() => selectLanguage(language.name)}
+            onClick={() => selectLanguage(language.lng)}
             className={
-              selectedLanguage === language.name
+              selectedLanguage === language.lng
                 ? "selected-button language-button"
                 : "language-button"
             }
