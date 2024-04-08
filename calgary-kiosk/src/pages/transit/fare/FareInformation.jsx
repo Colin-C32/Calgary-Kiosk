@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "../../../components/UI/Header";
 import { Taskbar } from "../../../components/taskbar/Taskbar";
 import "./FareInformation.css";
@@ -26,6 +26,20 @@ const FareInformation = ({ setPage }) => {
     AdultMonthPass: 115.0,
     YouthMonthPass: 82.5,
     ChildMonthPass: 0,
+  };
+
+  const resetData = () => {
+    setFareData({
+      AdultSingleUse: 0,
+      YouthSingleUse: 0,
+      ChildSingleUse: 0,
+      AdultDayPass: 0,
+      YouthDayPass: 0,
+      ChildDayPass: 0,
+      AdultMonthPass: 0,
+      YouthMonthPass: 0,
+      ChildMonthPass: 0,
+    });
   };
 
   const handleValueChange = (type, value) => {
@@ -86,32 +100,41 @@ const FareInformation = ({ setPage }) => {
           <div class="age-title">Child (0-12)</div>
 
           <div class="duration">Single Use (90min)</div>
-          <NumberBox type="AdultSingleUse" onChange={handleValueChange} />
-          <NumberBox type="YouthSingleUse" onChange={handleValueChange} />
-          <NumberBox type="ChildSingleUse" onChange={handleValueChange} />
+          <NumberBox type="AdultSingleUse" valueProp={fareData.AdultSingleUse} onChange={handleValueChange} />
+          <NumberBox type="YouthSingleUse" valueProp={fareData.YouthSingleUse} onChange={handleValueChange} />
+          <NumberBox type="ChildSingleUse" valueProp={fareData.ChildSingleUse} onChange={handleValueChange} />
 
           <div class="middle-row">
             <div class="duration">Day Pass (till EOD)</div>
-            <NumberBox type="AdultDayPass" onChange={handleValueChange} />
-            <NumberBox type="YouthDayPass" onChange={handleValueChange} />
-            <NumberBox type="ChildDayPass" onChange={handleValueChange} />
+            <NumberBox type="AdultDayPass" valueProp={fareData.AdultDayPass} onChange={handleValueChange} />
+            <NumberBox type="YouthDayPass" valueProp={fareData.YouthDayPass} onChange={handleValueChange} />
+            <NumberBox type="ChildDayPass" valueProp={fareData.ChildDayPass} onChange={handleValueChange} />
           </div>
 
           <div class="duration">Month Pass (1 mon)</div>
-          <NumberBox type="AdultMonthPass" onChange={handleValueChange} />
-          <NumberBox type="YouthMonthPass" onChange={handleValueChange} />
-          <NumberBox type="ChildMonthPass" onChange={handleValueChange} />
+          <NumberBox type="AdultMonthPass" valueProp={fareData.AdultMonthPass} onChange={handleValueChange} />
+          <NumberBox type="YouthMonthPass" valueProp={fareData.YouthMonthPass} onChange={handleValueChange} />
+          <NumberBox type="ChildMonthPass" valueProp={fareData.ChildMonthPass} onChange={handleValueChange} />
         </div>
       </div>
-
+      <div className="cost-and-reset">    
+        <div class="box" id="scan-text">
+          <p>Scan to buy tickets!</p>
+        </div>
+        <h3 className="reset-fare-cost" id="reset-fare-cost" onClick={() => {resetData()}}>Reset</h3>
+        <h3 id="total-fare-cost">Total: ${calculateTotalCost().toFixed(2)}</h3>
+      </div>
       <Taskbar setPage={setPage} />
-      <h3 id="total-fare-cost">Total: ${calculateTotalCost().toFixed(2)}</h3>
     </div>
   );
 };
 
-const NumberBox = ({ type, onChange }) => {
-  const [value, setValue] = useState(0);
+const NumberBox = ({ type, valueProp, onChange }) => {
+  const [value, setValue] = useState(valueProp);
+
+  useEffect(() => {
+    setValue(valueProp);
+  }, [valueProp])
 
   const increment = () => {
     const newValue = value + 1 < 100 ? value + 1 : value;

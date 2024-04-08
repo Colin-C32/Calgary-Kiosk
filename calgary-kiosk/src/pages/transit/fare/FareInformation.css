@@ -93,10 +93,25 @@
   margin: 0;
 }
 
-#total-fare-cost {
-  text-align: right;
+
+.cost-and-reset {
+  display: flex;
+  flex-wrap: wrap;
+  width: 92%;
   color: var(--dark-blue);
-  font-weight: 600;
-  margin: 0;
-  margin-right: 4%;
+  justify-content: space-between;
+  margin-left: 4%;
+}
+
+.reset-fare-cost {
+  margin-left: 140px;
+  font-size: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 19px;
+}
+
+.box:after {
+  bottom: 5px;
+  left: 50px;
 }
