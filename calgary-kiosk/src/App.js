@@ -9,6 +9,7 @@ import FareInformation from "./pages/transit/fare/FareInformation.jsx";
 import ErrorPage from "./pages/error/ErrorPage.jsx";
 import HelpIsOnTheWay from './pages/emergency/HelpIsOnTheWay.jsx';
 import TransitRoutes from './pages/transit/transitRoutes/TransitRoutes.jsx'
+import PlanATrip from "./pages/transit/planATrip/PlanATrip.jsx";
 
 function App() {
   const [page, setPage] = useState("Home");
@@ -31,6 +32,8 @@ function App() {
         <TransitRoutes {...{ setPage }} />
       ) : page === "FareInformation" ? (
         <FareInformation {...{ setPage }} />
+      ) : page === "PlanATrip" ? (
+        <PlanATrip {...{ setPage }} />
       ) : (
         <ErrorPage {...{ setPage }} />
       )}
