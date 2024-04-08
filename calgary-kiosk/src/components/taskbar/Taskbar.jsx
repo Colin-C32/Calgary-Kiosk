@@ -2,6 +2,7 @@ import React from "react";
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import HomeIcon from "@mui/icons-material/Home";
 import GTranslateIcon from "@mui/icons-material/GTranslate";
+import BlockIcon from '@mui/icons-material/Block';
 import { QRCodeSVG } from 'qrcode.react';
 import "./Taskbar.css";
 
@@ -16,9 +17,10 @@ export const Taskbar = ({ setPage, qrLink }) => {
       ) : (
         <div className="taskbar-qr">
           <QrCodeScannerIcon
-            sx={{ fontSize: 85, color: '#dfdfdf' }}
+            sx={{ fontSize: 85, color: '#cfcfcf' }}
           />
-          <div className="taskbar-qr-overlay">No QR Code</div>
+
+          <BlockIcon className="taskbar-qr-overlay" sx={{width: 70, height: 70}}/>
         </div>      
       )}
       <HomeIcon
