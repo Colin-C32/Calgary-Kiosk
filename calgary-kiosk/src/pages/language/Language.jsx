@@ -20,12 +20,16 @@ const LanguageSelection = ({ setPage }) => {
   };
 
   const confirmSelection = () => {
-    changeLanguage("ko");
-    if (selectedLanguage !== "English") {
-      setShowModal(true);
-    } else {
-      console.log("English confirmed");
+    if (selectedLanguage === "English") {
+      changeLanguage("en");
+      setShowModal(false);
       setPage("Home");
+    } else if (selectedLanguage === "Korean") {
+      changeLanguage("ko");
+      setShowModal(false);
+      setPage("Home");
+    } else {
+      setShowModal(true);
     }
   };
 
@@ -85,7 +89,7 @@ const LanguageSelection = ({ setPage }) => {
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
-        message="Sorry, the current language available is only English. Other languages are under BETA development."
+        message="Sorry, the only languages avaliable at this time are English and Korean."
         onConfirm={closeModalAndGoHome}
         countdown={10}
       />

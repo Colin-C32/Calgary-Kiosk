@@ -100,11 +100,10 @@
   color: var(--dark-blue);
   justify-content: space-between;
   margin-left: 4%;
-  border: 2px solid red;
 }
 
 .reset-fare-cost {
-  margin-left: 140px;
+  margin-left: 100px;
   font-size: 17px;
   text-decoration: underline;
   cursor: pointer;

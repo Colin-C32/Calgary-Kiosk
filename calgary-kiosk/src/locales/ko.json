@@ -105,6 +105,14 @@
     "Bienvenue à Calgary": "캘거리에 오신 환영합니다",
     "Scanne pour m'emmener avec toi!": "나를 데려가려면 스캔하세요!",
     "Changer de langue!": "언어를 바꿔보세요!",
-    "Scan to buy tickets!": "티켓을 구매하려면 스캔하세요!"
+    "Scan to buy tickets!": "티켓을 구매하려면 스캔하세요!",
+    "1min": "1 분",
+    "2min": "2 분",
+    "6min": "6 분",
+    "5min": "5 분",
+    "13min": "13 분",
+    "9min": "9 분",
+    "12min": "12 분",
+    "21min": "21 분"
   }
 }

@@ -110,7 +110,7 @@ const TransitRoutes = ({ setPage }) => {
           <div key={index} className="bus-info">
             <div className="bus-info-number">{bus.number}</div>
             <div className="bus-info-route">{bus.route}</div>
-            <div className="bus-info-time">{bus.time}</div>
+            <div className="bus-info-time">{t(`${bus.time}`)}</div>
           </div>
         ))}
         <div className="bus-pagination">
