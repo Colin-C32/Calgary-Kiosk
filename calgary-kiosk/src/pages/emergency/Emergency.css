@@ -43,7 +43,7 @@
         }
 
         td:nth-child(1) {
-            text-align: right;
+            text-align: left;
             padding-right: 10px;
         }
 
@@ -59,4 +59,5 @@
             background-color: #DADEFF;
         }
     }
+    
 }
