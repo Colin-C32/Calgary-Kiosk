@@ -9,62 +9,85 @@ import "./Emergency.css";
 import "./HelpIsOnTheWay.css";
 
 const EmergencyHome = ({ setPage }) => {
+  const [submitted, setSubmitted] = useState(false)
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [title, setTitle] = useState("REQUESTING HELP....");
   const [submitButtonText, setSubmitButtonText] = useState("Submit Request");
   const [countdown, setCountdown] = useState(8);
-  const [timerActive, setTimerActive] = useState(true);
   const [progress, setProgress] = useState(0);
 
   const toggleCategory = (category) => {
     setSelectedCategories((prev) => {
       const updatedCategories = prev.includes(category) ? prev.filter((item) => item !== category) : [...prev, category];
       
-      if (updatedCategories.length !== prev.length && submitButtonText !== "Submitting...") {
-        setSubmitButtonText("Update Request");
-      }
-      setTimerActive(false);
-      setProgress(0); 
+      if (updatedCategories.length !== prev.length) setSubmitButtonText("Update Request");
+      
+      setSubmitted(false)
+      resetProgress()
       return updatedCategories;
     });
   };
 
   const handleButtonClick = () => {
-    if (submitButtonText === "Update Request" || submitButtonText === "Request Submitted") {
-      setTitle("REQUEST UPDATED");
-      setSubmitButtonText("Submitting..."); 
-      setTimeout(() => {
-        
-        setSubmitButtonText("Submitted");
-        setTimeout(() => {
-          
-          setSubmitButtonText("Submit Request");
-        }, 2000);
-      }, 1000);
+    if(submitButtonText === 'Request Submitted' || submitButtonText === 'Request Updated'){
+      return 
+    }
+    else if(submitButtonText === 'Submit Request'){
+      submitRequest()
+    }
+    else if(submitButtonText === 'Update Request'){
+      updateRequest()
     }
   };
 
+  const resetProgress = () => {
+    cancelProgress()
+    setCountdown(8)
+  }
+
+  const cancelProgress = () => {
+    setProgress(0)
+    setCountdown(0)
+  }
+
+  const updateRequest = () => {
+    setSubmitted(true)
+    setTitle("HELP IS ON THE WAY");
+    setSubmitButtonText("Request Updated");
+    cancelProgress()
+  }
+
+  const submitRequest = () => {
+    setSubmitted(true)
+    setTitle("HELP IS ON THE WAY");
+    setSubmitButtonText("Request Submitted");
+    cancelProgress()
+  }
+
   useEffect(() => {
-    let interval = null;
-    if (timerActive && countdown > 0) {
+    if(submitted || countdown < 0) return
+
+    let interval = null
+    if(countdown > 0){
+      if(submitButtonText === 'Submit Request'){
+        setTitle("SUBMITTING REQUEST");
+      }
+      else if(submitButtonText === 'Update Request'){
+        setTitle("UPDATING REQUEST");
+      }
       interval = setInterval(() => {
         setCountdown((prevCountdown) => {
           return prevCountdown - 1; 
         });
         setProgress((prevProgress) => prevProgress + (100 / 8));
       }, 1000);
-    } else if (countdown === 0) {
-      clearInterval(interval);
-      setTitle("REQUEST SUBMITTED");
-      setSubmitButtonText("Submitted");
-      setTimerActive(false);
-      setTimeout(() => {
-        setSubmitButtonText("Request Submitted");
-        setProgress(0); 
-      }, 1000); 
     }
-    return () => clearInterval(interval);
-  }, [timerActive, countdown]);
+    else{
+      submitRequest(true)
+    }
+
+    return () => clearInterval(interval)
+  }, [submitted, countdown])
 
   return (
     <div className="emergency-contact-container">
@@ -72,22 +95,22 @@ const EmergencyHome = ({ setPage }) => {
       <div className="button-container">
         <div onClick={() => toggleCategory("Medical")} className={`emergency-category ${selectedCategories.includes("Medical") ? "selected" : ""}`}>
           <MedicalServicesIcon />
-          Medical (EMS)
+          Medical Services (EMS)
         </div>
         <div onClick={() => toggleCategory("Safety")} className={`emergency-category ${selectedCategories.includes("Safety") ? "selected" : ""}`}>
           <HealthAndSafetyIcon />
-          Police Services
+          Safety & Order (Police)
         </div>
         <div onClick={() => toggleCategory("Fire")} className={`emergency-category ${selectedCategories.includes("Fire") ? "selected" : ""}`}>
           <WhatshotIcon />
-          Fire / Smoke
+          Fire & Misc. (Firefighters)
         </div>
       </div>
       <div className="subtitle">Please select a category so our first responders can be better equipped to assist you</div>
-      <div className="information-option submit" style={{ '--progress': `${progress}%` }} onClick={handleButtonClick}>
+      <button className="information-option submit" style={{ '--progress': `${progress}%` }} onClick={handleButtonClick}>
         <span className="submit-text">{submitButtonText}</span>
         <span className="submit-progress" style={{ width: `${progress}%` }}></span>
-      </div>
+      </button>
       <div className="emergency-option cancel" onClick={() => setPage("Emergency")}>
         Cancel Request
       </div>
