@@ -1,4 +1,3 @@
-/* global google */
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import {
   DirectionsRenderer,
@@ -369,9 +368,8 @@ const PointsOfInterest = ({ setPage }) => {
           </div>
         )}
       </div>
-      <Taskbar setPage={setPage} />
     </div>
   );
 };
 
-export default PointsOfInterest;
+export default PointsofInterest;
